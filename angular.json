@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "liffv2ng9"
+    }
+  },
+  "defaultProject": "liffv2ng9",
+  "cli": {
+    "analytics": "f9656453-a0f5-403c-bfc6-8afa58fc8c8d"
+  }
 }
