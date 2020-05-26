@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  <button class="btn btn-primary">Test Button</button>
+  <!-- Page -->
+  <div class="container-fluid rounded mx-auto d-block text-center">
+ 
+
+      <h2>Card Image</h2>
+      <p>Image at the top (card-img-top):</p>
+      <div class="card text-center" style="width:200px" >
+        <img class="card-img-top img-fluid" src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="Card image" style="width:100%">
+        <div class="card-body text-center">
+          <h4 class="card-title">John Doe</h4>
+          <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+          <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+          <button type="button" class="btn btn-primary" (click)="logIn()">LINE Login</button>
+          <button type="button" class="btn btn-primary" (click)="logOut()">Logout</button>
+        </div>
+      </div>
+
+   
+  </div>
+  <!-- End Page -->
 </body>
+
 </html>
