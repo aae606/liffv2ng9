@@ -17,9 +17,12 @@
       <div class="card text-center" style="width:200px" >
         <img class="card-img-top img-fluid" src="https://www.w3schools.com/bootstrap4/img_avatar3.png" alt="Card image" style="width:100%">
         <div class="card-body text-center">
-          <h4 class="card-title">John Doe</h4>
-          <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-          <!-- <a href="#" class="btn btn-primary">See Profile</a> -->
+          <h4 class="card-title">displayName: {{ displayName }}</h4>
+          <p class="card-text">userId: {{ userId }} </p>
+          <p class="card-text">pictureUrl: {{ pictureUrl }} </p>
+          <p class="card-text">displayName: {{ displayName }} </p>
+          <p class="card-text">statusMessage: {{ statusMessage }} </p>
+          <p class="card-text">email: {{ email }} </p>
           <button type="button" class="btn btn-primary" (click)="logIn()">LINE Login</button>
           <button type="button" class="btn btn-primary" (click)="logOut()">Logout</button>
         </div>

@@ -12,6 +12,13 @@ export class HomeComponent implements OnInit {
   version: String;
   isInClient: boolean;
   isLogin: boolean;
+
+  pictureUrl:string;
+  userId:string;
+  displayName:string;
+  statusMessage:string;
+  email:string;
+
   constructor() {}
 
   ngOnInit() {
@@ -28,9 +35,12 @@ export class HomeComponent implements OnInit {
       } else {
         // liff.login()
        console.log('login');
-      this.isLogin = liff.isLoggedIn()
-        
+       this.isLogin = liff.isLoggedIn()
+       this.getUserProfile()
       }
+      this.os = liff.getOS()
+      this.isLogin = liff.isLoggedIn()
+
       
 
     })
@@ -45,7 +55,12 @@ export class HomeComponent implements OnInit {
   }
   async getUserProfile() {
     const profile = await liff.getProfile()
-
+    // Destructuring
+    this.pictureUrl = profile.pictureUrl
+    this.userId = profile.userId
+    this.displayName = profile.displayName
+    this.statusMessage = profile.statusMessage
+    this.email = (await liff.getDecodedIDToken()).email
   }
 
   
