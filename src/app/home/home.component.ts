@@ -1,3 +1,4 @@
+import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
 import { LIFFErrorObject } from 'liff-type';
 @Component({
@@ -10,6 +11,7 @@ export class HomeComponent implements OnInit {
   language: String;
   version: String;
   isInClient: boolean;
+  isLogin: boolean;
   constructor() {}
 
   ngOnInit() {
@@ -19,13 +21,17 @@ export class HomeComponent implements OnInit {
   main() {
     liff.init({ liffId: '1654187718-l0z2DKvr'})
     .then( () => {
-      if ( !liff.isLoggedIn ) {
+      if ( !liff.isLoggedIn() ) {
         // liff.login()
-
+        console.log('log out');
+        
       } else {
         // liff.login()
+       console.log('login');
+      this.isLogin = liff.isLoggedIn()
+        
       }
-
+      
 
     })
     .catch( (err: LIFFErrorObject) => console.error(err.message))    
@@ -35,8 +41,11 @@ export class HomeComponent implements OnInit {
   }
   logOut() {
     liff.logout()
-    console.log('logout');
-    
+    window.location.reload()   
+  }
+  async getUserProfile() {
+    const profile = await liff.getProfile()
+
   }
 
   
